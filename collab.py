@@ -41,3 +41,34 @@ def delete_expense():
     expenses[category] = [e for e in expenses[category] if e['date'] != date]
     print(f"Expense on {date} in category '{category}' removed.")
 
+def main():
+   # Infinite loop for displaying the menu
+   while True:
+       print("\nExpense Tracker Menu:")
+       print("1. Add Expense")  
+       print("2. View Expenses")  
+       print("3. Calculate Total Expenses")  
+       print("4. Delete Expense")  
+       print("5. Exit")  
+      #Options of functions (eg. option to add expense, etc)
+     
+       choice = input("Enter your choice: ")
+      
+       # Executing the corresponding function
+       if choice == '1':
+           add_expense()
+       elif choice == '2':
+           view_expenses()
+       elif choice == '3':
+           calculate_total_expenses()
+       elif choice == '4':
+           delete_expense()
+       elif choice == '5':
+           print("Exiting program...")  
+          #Call functions
+           break  # Exit the loop to end the program
+       else:
+           print("Invalid choice. Please try again.")  # Handle bad (invalid) inputs
+
+if __name__ == "__main__":
+   main()  # Call the main function to start the program
